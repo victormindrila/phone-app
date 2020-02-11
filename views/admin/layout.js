@@ -33,6 +33,10 @@ module.exports = ({ content }) => {
           <div class="container">
             ${content}
           </div>
+          <script src="/js/config.js" defer></script>
+          <script src="/js/utils.js" defer></script>
+          <script src="/js/autocomplete.js" defer></script>
+          <script src="/js/newproduct.js" defer></script>
         </body>
       </html>
     `;

@@ -6,7 +6,7 @@ module.exports = ({ products }) => {
 			return `
       <tr>
         <td>${product.title}</td>
-        <td>${product.price}</td>
+        <td>${product.userPrice}</td>
         <td>
           <a href="/admin/products/${product.id}/edit">
             <button class="button is-link">

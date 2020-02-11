@@ -20,19 +20,113 @@ router.get('/admin/products/new', requireAuth, (req, res) => {
 	res.send(productsNewTemplate({}));
 });
 
-router.post(
-	'/admin/products/new',
-	requireAuth,
-	upload.single('image'),
-	[ requireTitle, requirePrice ],
-	handleErrors(productsNewTemplate),
-	async (req, res) => {
-		const image = req.file.buffer.toString('base64');
-		const { title, price } = req.body;
-		await productsRepo.create({ title, price, image });
-		res.redirect('/admin/products');
-	}
-);
+router.post('/admin/products/new', requireAuth, upload.single('image'), async (req, res) => {
+	const image = req.file.buffer.toString('base64');
+	const {
+		title,
+		userPrice,
+		DeviceName,
+		Brand,
+		technology,
+		gprs,
+		edge,
+		announced,
+		status,
+		dimensions,
+		weight,
+		sim,
+		type,
+		size,
+		resolution,
+		card_slot,
+		alert_types,
+		loudspeaker,
+		wlan,
+		bluetooth,
+		gps,
+		radio,
+		usb,
+		messaging,
+		browser,
+		java,
+		features_c,
+		battery_c,
+		stand_by,
+		talk_time,
+		colors,
+		sar_us,
+		sar_eu,
+		sensors,
+		cpu,
+		internal,
+		os,
+		primary_,
+		video,
+		secondary,
+		speed,
+		music_play,
+		protection,
+		gpu,
+		multitouch,
+		audio_quality,
+		_2g_bands,
+		_3_5mm_jack_,
+		_3g_bands
+	} = req.body;
+	await productsRepo.create({
+		title,
+		userPrice,
+		DeviceName,
+		Brand,
+		technology,
+		gprs,
+		edge,
+		announced,
+		status,
+		dimensions,
+		weight,
+		sim,
+		type,
+		size,
+		resolution,
+		card_slot,
+		alert_types,
+		loudspeaker,
+		wlan,
+		bluetooth,
+		gps,
+		radio,
+		usb,
+		messaging,
+		browser,
+		java,
+		features_c,
+		battery_c,
+		stand_by,
+		talk_time,
+		colors,
+		sar_us,
+		sar_eu,
+		sensors,
+		cpu,
+		internal,
+		os,
+		primary_,
+		video,
+		secondary,
+		speed,
+		music_play,
+		protection,
+		gpu,
+		multitouch,
+		audio_quality,
+		_2g_bands,
+		_3_5mm_jack_,
+		_3g_bands,
+		image
+	});
+	res.redirect('/admin/products');
+});
 
 router.get('/admin/products/:id/edit', requireAuth, async (req, res) => {
 	const product = await productsRepo.getOne(req.params.id);

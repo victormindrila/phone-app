@@ -2,7 +2,7 @@ const layout = require('../layout');
 
 module.exports = ({ items }) => {
 	const totalPrice = items.reduce((prev, item) => {
-		return prev + item.quantity * item.product.price;
+		return prev + item.quantity * item.product.userPrice;
 	}, 0);
 	const renderedItems = items
 		.map((item) => {
@@ -11,10 +11,10 @@ module.exports = ({ items }) => {
           <h3 class="subtitle">${item.product.title}</h3>
           <div class="cart-right">
             <div>
-              $${item.product.price}  X  ${item.quantity} = 
+              $${item.product.userPrice}  X  ${item.quantity} = 
             </div>
             <div class="price is-size-4">
-              $${item.product.price * item.quantity}
+              $${item.product.userPrice * item.quantity}
             </div>
             <div class="remove">
               <form method="POST" action="/cart/products/delete">

@@ -4,54 +4,41 @@ module.exports = ({ products }) => {
 	const renderedProducts = products
 		.map((product) => {
 			return `
-        <div class="column is-one-quarter">
-          <div class="card product-card">
-            <figure>
+        <article class="product">
+          <div class="product-details">
+            <figure class="product-image">
               <img src="data:image/png;base64, ${product.image}"/>
             </figure>
-            <div class="card-content">
-              <h3 class="subtitle">${product.title}</h3>
-              <h5>$${product.price}</h5>
+            <div>
+              <h2>${product.title}</h2>
+              <h2>$${product.userPrice}</h2>
             </div>
-            <footer class="card-footer">
+            <footer class="product-footer hidden">
               <form action="/cart/products" method="POST">
                 <input hidden value="${product.id}" name="productId"/>
-                <button class="button has-icon is-inverted">
+                <button class="product-cart-btn">
                   <i class="fa fa-shopping-cart"></i> Add to cart
                 </button>
+                <button class="product-view-btn">View product</button>
               </form>
             </footer>
           </div>
-        </div>
+        </article>
       `;
 		})
 		.join('\n');
-
 	return layout({
 		content: `
-      <section class="banner">
-        <div class="container">
+      <section class="container">
+        <div>
           <div class="columns is-centered">
             <img src="/images/banner.jpg" />
           </div>
         </div>
       </section>
-      
-      <section>
-        <div class="container">
-          <div class="columns">
-            <div class="column "></div>
-            <div class="column is-four-fifths">
-              <div>
-                <h2 class="title text-center">Featured Items</h2>
-                <div class="columns products">
+      <h2 class="container">FEATURED PRODUCTS</h2>
+      <section class=" products">
                   ${renderedProducts}  
-                </div>
-              </div>
-            </div>
-            <div class="column "></div>
-          </div>
-        </div>
       </section>
     `
 	});
