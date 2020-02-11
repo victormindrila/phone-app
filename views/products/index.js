@@ -29,15 +29,25 @@ module.exports = ({ products }) => {
 		.join('\n');
 	return layout({
 		content: `
-      <section class="container">
-        <div>
-          <div class="columns is-centered">
-            <img src="/images/banner.jpg" />
-          </div>
-        </div>
-      </section>
+    <section class="container">
+    <div class="slider">
+      <img src="/images/samsung-galaxy-fold-7.jpg" alt="">
+      <div class="slider-description one-half">
+        <ul>
+          <li>Feature 1</li>
+          <li>Feature 2</li>
+          <li>Feature 3</li>
+          <li>Feature 4</li>
+          <li>Feature 5</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <div class="container">
+    <hr> 
+  </div>
       <h2 class="container">FEATURED PRODUCTS</h2>
-      <section class=" products">
+      <section class="products">
                   ${renderedProducts}  
       </section>
     `

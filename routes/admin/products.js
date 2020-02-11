@@ -16,6 +16,12 @@ router.get('/admin/products', requireAuth, async (req, res) => {
 	res.send(productsIndexTemplate({ products }));
 });
 
+router.get('/admin/products/new-category', requireAuth, async (req, res) => {
+	categories = await productsRepo.getAll();
+	console.log(categories);
+	res.redirect('/admin/products');
+});
+
 router.get('/admin/products/new', requireAuth, (req, res) => {
 	res.send(productsNewTemplate({}));
 });

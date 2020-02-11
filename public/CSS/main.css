@@ -201,7 +201,6 @@ hr {
 .products {
 	display: flex;
 	flex-wrap: wrap;
-	text-align: center;
 	justify-content: space-between;
 }
 
@@ -236,7 +235,7 @@ hr {
 	height: 100%;
 	align-items: center;
 	top: 0;
-	background-color: rgba(255, 255, 255, 0.301);
+	background-color: rgba(255, 255, 255, 0.20);
 }
 
 .product-cart-btn {
