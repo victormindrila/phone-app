@@ -1,4 +1,4 @@
-module.exports = ({ content }) => {
+module.exports = ({ renderedCategories, content }) => {
 	return `
 
   <!DOCTYPE html>
@@ -17,7 +17,7 @@ module.exports = ({ content }) => {
     <p id="admin"><a href="/admin/products">Admin Login </a> </p>
     <header class="site-header">
     <div class="container flex">
-        <h1 class="site-title one-half"><i class="fab fa-android"></i> VICTOR'S PHONE SHOP</h1>
+        <h1 class="site-title one-half"><i class="fab fa-android"></i> <a href="/">VICTOR'S PHONE SHOP</a></h1>
         <div class="user one-half">
             <p><a href="/"><strong>Sign in</strong></a> or <a href="/"><strong>Create an Account</strong></a></p>
             <form action="/" class="search-bar">
@@ -25,16 +25,13 @@ module.exports = ({ content }) => {
               <button class="search-submit"><i class="fas fa-search"></i></button>
             </form>
             
-            <a href="/" class="cart-btn"><i class="fas fa-shopping-cart"></i> Cart </a>
+            <a href="/cart" class="cart-btn"><i class="fas fa-shopping-cart"></i> Cart </a>
         </div>
     </div>
     </header>
       <nav class="nav-bar">
         <ul class="container">
-            <li><a href="">Phones <i class="fas fa-caret-down"></i></a></li>
-            <li><a href="">Cameras <i class="fas fa-caret-down"></i></a></li>
-            <li><a href="">Cases <i class="fas fa-caret-down"></i></a></li>
-            <li><a href="">Accessories <i class="fas fa-caret-down"></i></i></a></li>
+            ${renderedCategories}
         </ul>
       </nav>
 

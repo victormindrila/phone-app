@@ -1,0 +1,57 @@
+[
+  {
+    "subCategoryName": "apple",
+    "categoryId": "5b8f4045",
+    "id": "85560fd6"
+  },
+  {
+    "subCategoryName": "Samsung",
+    "categoryId": "5b8f4045",
+    "id": "95c41226"
+  },
+  {
+    "subCategoryName": "Huawei",
+    "categoryId": "5b8f4045",
+    "id": "34365ee5"
+  },
+  {
+    "subCategoryName": "Samsung",
+    "categoryId": "5b8f4045",
+    "id": "1c4d95b6"
+  },
+  {
+    "subCategoryName": "Nikon",
+    "categoryId": "dbc49da4",
+    "id": "34d124c2"
+  },
+  {
+    "subCategoryName": "Canon",
+    "categoryId": "dbc49da4",
+    "id": "1afa1e40"
+  },
+  {
+    "subCategoryName": "One Plus",
+    "categoryId": "5b8f4045",
+    "id": "d169183f"
+  },
+  {
+    "subCategoryName": "Apple",
+    "categoryId": "a0287f9b",
+    "id": "e0709087"
+  },
+  {
+    "subCategoryName": "Samsung",
+    "categoryId": "a0287f9b",
+    "id": "9773c957"
+  },
+  {
+    "subCategoryName": "Huawei",
+    "categoryId": "a0287f9b",
+    "id": "17dad453"
+  },
+  {
+    "subCategoryName": "new products subcategory",
+    "categoryId": "4760d77f",
+    "id": "8945afa3"
+  }
+]

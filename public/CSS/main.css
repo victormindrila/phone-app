@@ -369,3 +369,11 @@ hr {
 .hidden {
 	display: none;
 }
+
+.shopping-cart * {
+	display: inline-block;
+}
+
+.shopping-cart img {
+	width: 40px;
+}

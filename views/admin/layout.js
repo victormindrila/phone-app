@@ -7,7 +7,7 @@ module.exports = ({ content }) => {
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
           <title>Shop</title>
           <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
-          <link href="/css/main.css" rel="stylesheet">
+          <link href="/css/admin/main.css" rel="stylesheet">
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css"></link>
         </head>
   
@@ -25,6 +25,9 @@ module.exports = ({ content }) => {
                     <div class="navbar-item">
                       <a href="/admin/products"><i class="fa fa-star"></i> Products</a>
                     </div>
+                    <div class="navbar-item">
+                    <a href="/admin/categories"><i class="fa fa-star"></i> Categories</a>
+                  </div>
                   </div>
                 </div>
               </div>
@@ -34,9 +37,8 @@ module.exports = ({ content }) => {
             ${content}
           </div>
           <script src="/js/config.js" defer></script>
-          <script src="/js/utils.js" defer></script>
-          <script src="/js/autocomplete.js" defer></script>
-          <script src="/js/newproduct.js" defer></script>
+          
+                  
         </body>
       </html>
     `;

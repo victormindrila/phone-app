@@ -1,6 +1,6 @@
 const layout = require('../layout');
 
-module.exports = ({ products }) => {
+module.exports = ({ categories, products }) => {
 	const renderedProducts = products
 		.map((product) => {
 			return `
@@ -27,7 +27,16 @@ module.exports = ({ products }) => {
       `;
 		})
 		.join('\n');
+
+	const renderedCategories = categories
+		.map((category) => {
+			return `
+      <li><a href="">${category.categoryName} <i class="fas fa-caret-down"></i></a></li>
+    `;
+		})
+		.join('');
 	return layout({
+		renderedCategories,
 		content: `
     <section class="container">
     <div class="slider">

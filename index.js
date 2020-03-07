@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const cookieSession = require('cookie-session');
 const authRouter = require('./routes/admin/auth');
 const adminProductsRouter = require('./routes/admin/products');
+const adminCategoriesRouter = require('./routes/admin/categories');
 const productsRouter = require('./routes/products');
 const cartsRouter = require('./routes/carts');
 
@@ -15,6 +16,7 @@ app.use(cookieSession({ keys: [ 'ldkjfalskdjf;lkj' ] }));
 app.use(authRouter);
 app.use(productsRouter);
 app.use(adminProductsRouter);
+app.use(adminCategoriesRouter);
 app.use(cartsRouter);
 
 app.listen(3000, () => {

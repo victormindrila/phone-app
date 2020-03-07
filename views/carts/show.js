@@ -1,26 +1,26 @@
 const layout = require('../layout');
 
-module.exports = ({ items }) => {
+module.exports = ({ categories, items }) => {
 	const totalPrice = items.reduce((prev, item) => {
 		return prev + item.quantity * item.product.userPrice;
 	}, 0);
 	const renderedItems = items
 		.map((item) => {
 			return `
-        <div class="cart-item message">
-          <h3 class="subtitle">${item.product.title}</h3>
-          <div class="cart-right">
+        <div class="shopping-cart">
+          <h3>${item.product.title}</h3>
+          <div>
             <div>
               $${item.product.userPrice}  X  ${item.quantity} = 
             </div>
-            <div class="price is-size-4">
+            <div>
               $${item.product.userPrice * item.quantity}
             </div>
-            <div class="remove">
+            <div>
               <form method="POST" action="/cart/products/delete">
-                <input hidden value="${item.id}" name="itemId" />
-                <button class="button is-danger">                  
-                  <span class="icon is-small">
+                <input type="hidden" value="${item.id}" name="itemId" />
+                <button>                  
+                  <span>
                     <i class="fas fa-times"></i>
                   </span>
                 </button>
@@ -31,26 +31,31 @@ module.exports = ({ items }) => {
       `;
 		})
 		.join('');
-
+	const renderedCategories = categories
+		.map((category) => {
+			return `
+      <li><a href="">${category.categoryName} <i class="fas fa-caret-down"></i></a></li>
+    `;
+		})
+		.join('');
 	return layout({
+		renderedCategories,
 		content: `
-      <div id="cart" class="container">
-        <div class="columns">
-          <div class="column"></div>
-          <div class="column is-four-fifths">
-            <h3 class="subtitle"><b>Shopping Cart</b></h3>
+      <div id="cart">
+        <div>
+          <div>
+            <h3><b>Shopping Cart</b></h3>
             <div>
               ${renderedItems}
             </div>
-            <div class="total message is-info">
-              <div class="message-header">
+            <div>
+              <div>
                 Total
               </div>
-              <h1 class="title">$${totalPrice}</h1>
-              <button class="button is-primary">Buy</button>
+              <h1>$${totalPrice}</h1>
+              <button>Buy</button>
             </div>
           </div>
-          <div class="column"></div>
         </div>
       </div>
     `
